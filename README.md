@@ -63,7 +63,7 @@ All of this is wired together into one interactive console menu in `main.py`.
 | Sequential LangChain pipeline | `step7_langchain_chains.py` |
 | Persistent student memory | `step8_memory_system.py` |
 | Tool-using AI agent | `step9_agents_tools.py` |
-| Unified console application | `main.py` |
+| Unified console application | `step10_final_integration.py` |
 
 ---
 
@@ -71,7 +71,8 @@ All of this is wired together into one interactive console menu in `main.py`.
 
 ```
                     ┌─────────────────┐
-                    │     main.py      │   <- console menu / entry point
+                    │     final-
+                      integration.py      │   <- console menu / entry point
                     └────────┬────────┘
                              │ imports & calls
         ┌────────┬────────┬─┴──┬────────┬────────┬────────┬────────┬────────┐
@@ -385,7 +386,7 @@ on, not `pip3`/`python3`.
 | `step7_langchain_chains.py` | Step 7 — LangChain Chains | Sequential pipeline implementation |
 | `step8_memory_system.py` | Step 8 — Memory System | Context retention and personalization |
 | `step9_agents_tools.py` | Step 9 — Agents & Tools | Tool usage and multi-step reasoning |
-| `main.py` | Step 10 — Final Integration | Complete working application coherence |
+| `step10_final_integration.py` | Step 10 — Final Integration | Complete working application coherence |
 
 ---
 
