@@ -14,7 +14,7 @@ load_dotenv()
 def check_api_key():
     key = os.environ.get("GEMINI_API_KEY")
     if not key or key == "your_key_here":
-        print("\n❌  GEMINI_API_KEY not set!")
+        print("\n  GEMINI_API_KEY not set!")
         print("   Open the .env file and replace 'your_key_here' with your actual key.")
         print("   Get a free key at: https://aistudio.google.com/app/apikey\n")
         sys.exit(1)
@@ -34,7 +34,7 @@ def import_steps():
         import step8_memory_system as step8
         import step9_agents_tools as step9
     except ImportError as e:
-        print(f"\n❌  Import error: {e}")
+        print(f"\n  Import error: {e}")
         print("   Make sure you've run:  pip install -r requirements.txt\n")
         sys.exit(1)
 
@@ -84,9 +84,6 @@ def separator(title: str = ""):
 def pause():
     input("\n  [Press Enter to return to menu]")
 
-
-# ── Feature runners ───────────────────────────────────────────────────────────
-
 def feature_1():
     separator("Chat with Gemini")
     step1.run_chat_session()
@@ -127,7 +124,6 @@ def feature_about():
     print(ABOUT_TEXT)
 
 
-# ── Main loop ─────────────────────────────────────────────────────────────────
 
 def main():
     check_api_key()
@@ -151,7 +147,7 @@ def main():
         choice = input("  Enter a number (0–10): ").strip()
 
         if choice == "0":
-            print("\n  Goodbye! Good luck with your studies.\n")
+            print("\n  Goodbye! \n")
             break
 
         if choice in feature_map:

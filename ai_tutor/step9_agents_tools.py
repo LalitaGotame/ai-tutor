@@ -14,7 +14,7 @@ from langchain_classic.agents import initialize_agent, AgentType, Tool
 load_dotenv()
 
 
-# ── Tool 1: Calculator ────────────────────────────────────────────────────────
+# Calculator 
 
 def calculator_tool(expression: str) -> str:
     try:
@@ -30,7 +30,7 @@ def calculator_tool(expression: str) -> str:
         return f"Calculator error: {ex}. Use a valid expression like 'sqrt(144) + 5 * 3'."
 
 
-# ── Tool 2: Study Planner ─────────────────────────────────────────────────────
+#Study Planner 
 
 def study_planner_tool(query: str) -> str:
     parts    = [p.strip() for p in query.split(",")]
@@ -70,7 +70,7 @@ def info_summarizer_tool(text: str) -> str:
     return out
 
 
-# ── Agent ─────────────────────────────────────────────────────────────────────
+#Agent
 
 def build_agent():
     api_key = os.environ.get("GEMINI_API_KEY")

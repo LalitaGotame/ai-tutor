@@ -93,13 +93,13 @@ def run_langchain_menu():
 
     result = run_langchain_pipeline(topic, level)
 
-    print("\n📖 EXPLANATION\n" + "─" * 60)
+    print("\n EXPLANATION\n" + "─" * 60)
     print(result["explanation"])
 
-    print("\n📝 REVISION NOTES\n" + "─" * 60)
+    print("\n REVISION NOTES\n" + "─" * 60)
     print(result["revision_notes"])
 
-    print("\n❓ QUIZ\n" + "─" * 60)
+    print("\n QUIZ\n" + "─" * 60)
     print(result["quiz"])
 
 
