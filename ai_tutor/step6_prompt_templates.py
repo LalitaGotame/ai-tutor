@@ -97,7 +97,7 @@ def run_template_interactively(template_name: str) -> str:
 
 
 def run_prompt_templates_menu():
-    print("\n=== Step 6: Prompt Templates ===")
+    print("\n Step 6: Prompt Templates")
     print("1. Explanation template")
     print("2. Quiz template")
     print("3. Revision notes template")

@@ -123,7 +123,7 @@ def build_agent():
 
 
 def run_agents_menu():
-    print("\n=== Step 9: AI Agent with Tools ===")
+    print("\nStep 9: AI Agent with Tools")
     print("Tools: Calculator, StudyPlanner, InfoSummarizer")
     print("Try: 'What is sqrt(256) + 10?' or 'Make a 4-week plan for Chemistry A-Level'")
     print("Type 'quit' to exit.\n")

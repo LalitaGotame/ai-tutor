@@ -63,8 +63,17 @@ class TutorMemorySession:
         print(f"\n--- Conversation History ({len(messages)} messages) ---")
         for msg in messages:
             role = "Student" if msg.type == "human" else "Tutor"
-            preview = msg.content[:100].replace("\n", " ")
-            print(f"  [{role}]: {preview}{'...' if len(msg.content) > 100 else ''}")
+            # msg.content can be str or list — convert to str safely
+            content = (
+                msg.content
+                if isinstance(msg.content, str)
+                else " ".join(
+                    part if isinstance(part, str) else str(part)
+                    for part in msg.content
+                )
+            )
+            preview = content[:100].replace("\n", " ")
+            print(f"  [{role}]: {preview}{'...' if len(content) > 100 else ''}")
 
     def clear_history(self):
         self.memory.clear()
@@ -72,7 +81,7 @@ class TutorMemorySession:
 
 
 def run_memory_session():
-    print("\n=== Step 8: Memory System — Personalised Tutoring Session ===")
+    print("\nStep 8: Memory System — Personalised Tutoring Session")
 
     session = TutorMemorySession()
     name    = input("What's your name? ").strip() or "Student"

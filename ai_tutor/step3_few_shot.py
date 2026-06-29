@@ -66,7 +66,7 @@ def generate_quiz(topic: str, level: str = "GCSE", num_questions: int = 5) -> st
 
 
 def run_few_shot_menu():
-    print("\n=== Step 3: Few-Shot Prompting — Quiz Generator ===")
+    print("\n Step 3: Few-Shot Prompting — Quiz Generator ")
     topic = input("Quiz topic: ").strip()
     level = input("Level (e.g. GCSE, A-Level, University): ").strip() or "GCSE"
     num_q = input("Number of questions (default 5): ").strip()

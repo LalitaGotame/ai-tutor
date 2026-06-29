@@ -48,7 +48,7 @@ PERSONAS = {
 
 
 def run_role_prompting_menu():
-    print("\n=== Step 5: Role Prompting — AI Personas ===")
+    print("\nStep 5: Role Prompting — AI Personas")
     for key, persona in PERSONAS.items():
         print(f"{key}. {persona['name']}")
 

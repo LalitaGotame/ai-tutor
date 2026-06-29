@@ -40,7 +40,7 @@ def simplify_text(text: str) -> str:
 
 
 def run_zero_shot_menu():
-    print("\n=== Step 2: Zero-Shot Prompting ===")
+    print("\n Step 2: Zero-Shot Prompting ")
     print("1. Explain a topic")
     print("2. Summarise material")
     print("3. Simplify complex text")

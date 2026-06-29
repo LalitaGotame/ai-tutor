@@ -83,7 +83,7 @@ def run_langchain_pipeline(topic: str, level: str = "A-Level") -> dict:
 
 
 def run_langchain_menu():
-    print("\n=== Step 7: LangChain Sequential Pipeline ===")
+    print("\nStep 7: LangChain Sequential Pipeline")
     print("Pipeline: Topic → Explanation → Revision Notes → Quiz\n")
 
     topic = input("Topic to study: ").strip()

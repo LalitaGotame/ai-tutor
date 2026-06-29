@@ -46,7 +46,7 @@ def solve_word_problem(problem: str) -> str:
 
 
 def run_chain_of_thought_menu():
-    print("\n=== Step 4: Chain-of-Thought Problem Solver ===")
+    print("\nStep 4: Chain-of-Thought Problem Solver")
     print("1. Maths problem")
     print("2. Logic puzzle")
     print("3. Word problem")

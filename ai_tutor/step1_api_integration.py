@@ -10,6 +10,12 @@ import google.genai as genai
 
 load_dotenv()
 
+USER_NAME = ""
+
+def set_user_name(name: str):
+    global USER_NAME
+    USER_NAME = name
+
 
 def get_client():
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -20,16 +26,21 @@ def get_client():
 
 def run_chat_session():
     """Interactive chat session with full conversation history."""
-    print("\n=== Step 1: API Integration — Chat Session ===")
+    print("\nStep 1: API Integration")
     print("Type 'quit' to exit.\n")
 
     client = get_client()
     chat = client.chats.create(model="gemini-2.5-flash")
 
+    name_part = f"{USER_NAME}" if USER_NAME else ""
+    print(
+        f"Gemini: Hello, {name_part}! What's your query?\n"
+    )
+
     while True:
-        user_input = input("You: ").strip()
+        user_input = input(name_part+ ":").strip()
         if user_input.lower() in ("quit", "exit", "q"):
-            print("Session ended.")
+            print(f"Session ended. Goodbye{name_part}!")
             break
         if not user_input:
             continue
@@ -40,7 +51,7 @@ def run_chat_session():
     history = chat.get_history()
     print(f"\n--- Session History ({len(history)} turns) ---")
     for i, msg in enumerate(history, 1):
-        role = "You" if msg.role == "user" else "Gemini"
+        role = name_part if msg.role == "user" else "Gemini"
         text = (msg.parts[0].text or "") if msg.parts else ""
         preview = text[:80].replace("\n", " ")
         print(f"  {i}. [{role}]: {preview}{'...' if len(text) > 80 else ''}")
@@ -53,7 +64,7 @@ def send_single_message(prompt: str) -> str:
         model="gemini-2.5-flash",
         contents=prompt,
     )
-    return response.text or "" 
+    return response.text or ""
 
 
 if __name__ == "__main__":
